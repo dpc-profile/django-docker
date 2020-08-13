@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import socket
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -28,11 +28,7 @@ SECRET_KEY = '=yxm-acz-qhvslh1*1xvb3tkadv8h&6unnu3v^8s1@2j+q0p+8'
 # DEBUG can be True/False or 1/0
 DEBUG = int(os.environ.get('DEBUG', default=1))
 
-import netifaces as ni
-ip_address = str(ni.ifaddresses('wlan0')[ni.AF_INET][0]['addr'])
-#Pega o ip da rede
-
-ALLOWED_HOSTS = [ip_address, 'localhost']
+ALLOWED_HOSTS = ['192.168.20.104', 'localhost']
 
 # Application definition
 
