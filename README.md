@@ -3,7 +3,7 @@
 Projeto de aprendizagem de aplicação web usando django e Docker.
 
 
-### Installation
+### Instalação
 
 Rode o terminal na pasta raiz do projeto, onde se encontra o arquivo Dockerfile.
 Se qualquer alteração for feita em qualquer arquivo será preciso executar novamente o comando
