@@ -2,10 +2,6 @@
 
 Projeto de aprendizagem de aplicação web usando django e Docker.
 
-# Bugs conhecidos
-- Abrindo a pagina web no Microsoft Edge faz a pagina ficar um pouco quebrada.
-
-
 ### Instalação
 
 Rode o terminal na pasta raiz do projeto, onde se encontra o arquivo Dockerfile.
@@ -54,4 +50,7 @@ Se então todas as bibliotecas foram instaladas corretamente, rode o server.
 ```sh
 $ python manager.py runserver
 ```
+
+# Bugs conhecidos
+- Abrindo a pagina web no Microsoft Edge faz a pagina ficar um pouco quebrada.
 
