@@ -23,12 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '=yxm-acz-qhvslh1*1xvb3tkadv8h&6unnu3v^8s1@2j+q0p+8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
+DEBUG = True
 
-# DEBUG can be True/False or 1/0
-DEBUG = int(os.environ.get('DEBUG', default=1))
+ALLOWED_HOSTS = ['127.0.0.1','localhost']
 
-ALLOWED_HOSTS = ['192.168.20.104', 'localhost']
 
 # Application definition
 
@@ -126,3 +124,16 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'simplemooc', 'media')
+MEDIA_URL = '/media/'
+
+# E-mails
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+DEFAULT_FROM_EMAIL = 'Nome <email@gmail.com>'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'email@gmail.com'
+EMAIL_HOST_PASSWORD = 'senha!'
+EMAIL_PORT = 587
+
+CONTACT_EMAIL = 'contato@simplemooc.com'

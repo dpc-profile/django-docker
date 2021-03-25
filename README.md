@@ -2,6 +2,9 @@
 
 Projeto de aprendizagem de aplicação web usando django e Docker.
 
+## Bugs conhecidos
+- Abrindo a pagina web no Microsoft Edge faz a pagina ficar um pouco quebrada.
+
 
 ### Instalação
 

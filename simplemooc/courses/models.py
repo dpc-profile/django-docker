@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class CourseManager(models.Manager):
 
     def search(self, query):
@@ -12,7 +13,8 @@ class CourseManager(models.Manager):
 class Course(models.Model):
     name = models.CharField('Nome', max_length=100)
     slug = models.SlugField('Atalho')
-    description = models.TextField('Descrição', blank=True)
+    description = models.TextField('Descrição Simples', blank=True)
+    about = models.TextField('Sobre o Curso', blank=True)
     start_date = models.DateField('Data de Início', null=True, blank=True)
 
     image = models.ImageField(
@@ -29,6 +31,12 @@ class Course(models.Model):
 
     def __str__(self):
         return self.name
+
+
+    def get_absolute_url(self):
+        from django.urls import reverse
+        #return ('courses:details', (), {'slug': self.slug}) #não funcionou
+        return reverse('courses:details', args=[self.slug])
 
     class Meta:
         verbose_name = 'Curso'
