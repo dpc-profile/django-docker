@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'simplemooc.core',
     'simplemooc.courses',
+    'simplemooc.accounts',
 
 ]
 
