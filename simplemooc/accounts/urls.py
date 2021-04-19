@@ -14,5 +14,6 @@ urlpatterns = [
 '''
 urlpatterns = [
     path('', include('django.contrib.auth.urls'), name='login'),
+    path('register/', views.register, name='register'),
     re_path(r'^entrar/', include('django.contrib.auth.urls'), name='login'),
 ]
