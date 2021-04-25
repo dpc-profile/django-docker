@@ -1,5 +1,22 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth.forms import UserCreationForm
+from django.conf import settings
 
+def register(request):
+    template_name = 'register.html'
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(settings.LOGIN_URLs)
+    else:
+        form = UserCreationForm()
+    context = {
+        'form': form
+    }
+    return render (request, template_name, context)
+
+'''
 def register(request):
 
     registered = False
@@ -22,12 +39,11 @@ def register(request):
             profile.save()
 
             registered = True
-
         else:
-            print(userForm.errors, profileForm.errors)
-
+            print(userForm.errors, profileForm.errors)   
     else:
         userForm = forms.UserForm()
         profileForm = forms.UserProfileInfoForm()
 
     return render(request, 'basic/registration.html', {'userForm':userForm, 'profileForm':profileForm, 'registered':registered})
+'''

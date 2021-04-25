@@ -20,8 +20,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', include('simplemooc.core.urls', namespace='core')),
-    path('conta/', include('simplemooc.accounts.urls', namespace='account')),
     path('cursos/', include('simplemooc.courses.urls', namespace='courses')),
+    path('conta/', include('simplemooc.accounts.urls', namespace='account')),
     path('admin/', admin.site.urls),
 ]
 
