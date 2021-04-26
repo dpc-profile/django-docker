@@ -1,11 +1,18 @@
+#Accounts/urls
 from django.urls import path, re_path, include
-from . import views
+from django.conf import settings
+from . import views as views_accounts
+from django.contrib.auth import views as view_auth
 
 app_name = 'accounts'
 
 urlpatterns = [
     path('', include('django.contrib.auth.urls'), name='login'),
     re_path(r'^entrar/', include('django.contrib.auth.urls'), name='login'),
-    path(r'cadastre-se/', views.register,name='register'),
+    path(r'cadastre-se/', views_accounts.register,name='register'),
+    path(r'sair/', 
+        view_auth.LogoutView.as_view(next_page = settings.LOGIN_REDIRECT_URL),
+        name='logout'),
+    
     
 ]
