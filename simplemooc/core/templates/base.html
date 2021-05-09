@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html> 
 {% load static %}
 <html lang="pt-br">
 
@@ -7,13 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="PlataCourses - Uma plataforma de cursos gratuitos. SEMPRE." />
     <title>PlataCourses</title>
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
-    <link rel="stylesheet" href="{% static 'css/styles.css'%}" />
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DFN59YZEDW"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
 
         gtag('config', 'G-DFN59YZEDW');
@@ -21,28 +24,40 @@
 </head>
 
 <body>
-    <div class="header">
-        <div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal">
-            <a class="pure-menu-heading" href="{% url 'core:home' %}">PlataCourses</a>
-            <ul>
-                <li class="pure-menu-selected"><a href="{% url 'core:home' %}">Início</a></li>
-                <li><a href="{% url 'courses:index' %}">Cursos</a></li>
-                <li><a href="{% url 'core:contact' %}">Contato</a></li>
-                {% if user.is_authenticated %}
-                <li><a href="{% url 'accounts:logout' %}">Sair</a></li>
-                {% else %}
-                <li><a href="{% url 'accounts:login' %}">Entrar</a></li>
-                {% endif %}
-            </ul>
+    <div id="layout">
+        <a href="#menu" id="menuLink" class="menu-link">
+            <!-- Hamburger icon -->
+            <span></span>
+        </a>
+
+        <div id="menu">
+            <div class="pure-menu">
+                <a class="pure-menu-heading" href="{% url 'core:home' %}">PlataCourses</a>
+
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item"><a href="{% url 'core:home' %}" class="pure-menu-link">Início</a></li>
+                    <li class="pure-menu-item"><a href="{% url 'courses:index' %}" class="pure-menu-link">Cursos</a></li>
+                    <li class="pure-menu-item"><a href="{% url 'core:contact' %}" class="pure-menu-link">Contato</a></li>
+                    {% if user.is_authenticated %}
+                    <li class="pure-menu-item"><a href="{% url 'accounts:logout' %}" class="pure-menu-link">Sair</a></li>
+                    {% else %}
+                    <li class="pure-menu-item"><a href="{% url 'accounts:login' %}" class="pure-menu-link">Entrar</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+
+        </div>
+
+        <div id="main">
+            <div class="content">
+                {%block content %}{% endblock %}
+                <div class="footer">
+                    PlataCourses - Uma plataforma de cursos gratuitos. SEMPRE.
+                </div>
+            </div>
         </div>
     </div>
-    <div class="content">
-        {%block content %}{% endblock %}
-        <div class="footer">
-            PlataCourses - Uma plataforma de cursos gratuitos. SEMPRE.
-        </div>
-    </div>
-    <script src="http://yui.yahooapis.com/3.12.0/build/yui/yui-min.js"></script>
+    <script src="https://purecss.io/js/ui.js"></script>
 </body>
 
 </html>
