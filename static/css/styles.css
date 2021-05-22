@@ -1,49 +1,107 @@
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
 body {
     margin: 0 auto;
     line-height: 1.7em;
 }
-.l-box {
-    padding: 1em;
+
+.content {
+    padding-top: 2em;
+    max-width: 100%;
+    margin-bottom: 50px;
+    line-height: 1.6em;
+    margin: 0 auto;
 }
+
 .header {
     margin: 0 0;
 }
+
 .header .pure-menu {
     padding: 0.5em;
+    background-color: #2d3e50;
 }
+
+.header .pure-menu a {
+    color: #fff;
+}
+
 .header .pure-menu li a:hover,
 .header .pure-menu li a:focus {
     background: none;
     border: none;
-    color: #aaa;
+    color: #AECFE5;
 }
+
+.header .pure-menu-heading {
+    float: left;
+}
+
+.header ul {
+    float: right;
+}
+
+.home-menu {
+    padding: 0.5em;
+    text-align: left;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.10);
+}
+
+.home-menu.pure-menu-open {
+    background: #2d3e50;
+}
+
+.pure-menu.pure-menu-open.pure-menu-fixed {
+    border-bottom: none;
+    z-index: 4;
+}
+
+.home-menu .pure-menu-heading {
+    color: white;
+    font-weight: 400;
+    font-size: 120%;
+}
+
+.home-menu .pure-menu-selected a {
+    color: white;
+}
+
+.home-menu a {
+    color: #6FBEF3;
+}
+
+.home-menu li a:hover,
+.home-menu li a:focus {
+    background: none;
+    border: none;
+    color: #AECFE5;
+}
+
 body .primary-button {
     background: #02a6eb;
     color: #fff;
 }
+
 .splash {
-    margin: 2em auto 0;
-    padding: 3em 0.5em;
+    margin: 0 auto;
+    padding: 1.5em 1em 0;
     background: #eee;
 }
+
 .splash .splash-head {
     font-size: 300%;
     margin: 0em 0;
     line-height: 1.2em;
 }
+
 .splash .splash-subhead {
     color: #999;
     font-weight: 300;
     line-height: 1.4em;
 }
+
 .splash .primary-button {
     font-size: 150%;
 }
+
 .content .content-subhead {
     color: #999;
     padding-bottom: 0.3em;
@@ -52,24 +110,289 @@ body .primary-button {
     border-bottom: 2px solid #eee;
     display: inline-block;
 }
+
 .content .content-ribbon {
     margin: 3em;
     border-bottom: 1px solid #eee;
 }
+
 .ribbon {
     background: #eee;
     text-align: center;
     padding: 2em;
     color: #999;
 }
+
 .ribbon h2 {
     display: inline;
     font-weight: normal;
 }
+
 .footer {
-    background: #111;
-    color: #666;
+    background: #2d3e50;
+    color: #fff;
     text-align: center;
     padding: 1em;
     font-size: 80%;
+}
+
+ul.errorlist {
+    margin: 0;
+    padding: 0;
+}
+
+ul.errorlist li {
+    color: #C53F3F;
+    display: block;
+    margin: 0.3em 0;
+    font-size: 0.9em;
+    border: none;
+    padding: 0;
+}
+
+form.pure-form-aligned ul.errorlist li {
+    padding-left: 11.5em;
+}
+
+.pure-form label {
+    margin: 1em 0 0;
+    font-weight: bold;
+    font-size: 100%;
+}
+
+.pure-form input[type],
+textarea,
+select {
+    border: 2px solid #ddd;
+    box-shadow: none;
+    font-size: 100%;
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 0.3em;
+}
+
+.pure-form textarea {
+    max-width: 450px;
+}
+
+.pure-form .pure-control-group {
+    margin-bottom: 1em;
+}
+
+.pure-button {
+    background-color: #1f8dd6;
+    color: white;
+    padding: 0.5em 2em;
+    border-radius: 5px;
+}
+
+a.pure-button-primary {
+    background: white;
+    color: #1f8dd6;
+    border-radius: 5px;
+    font-size: 120%;
+}
+
+#layout,
+#menu,
+.menu-link {
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+#layout {
+    position: relative;
+    left: 0;
+    padding-left: 0;
+}
+
+#layout.active #menu {
+    left: 150px;
+    width: 150px;
+}
+
+#layout.active .menu-link {
+    left: 150px;
+}
+
+#menu {
+    margin-left: -150px;
+    /* "#menu" width */
+    width: 150px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+    /* so the menu or its navicon stays above all content */
+    background: #191818;
+    overflow-y: auto;
+}
+
+
+/*
+    All anchors inside the menu should be styled like this.
+    */
+
+#menu a {
+    color: #999;
+    border: none;
+    padding: 0.6em 0 0.6em 0.6em;
+}
+
+
+/*
+    Remove all background/borders, since we are applying them to #menu.
+    */
+
+#menu .pure-menu,
+#menu .pure-menu ul {
+    border: none;
+    background: transparent;
+}
+
+
+/*
+    Add that light border to separate items into groups.
+    */
+
+#menu .pure-menu ul,
+#menu .pure-menu .menu-item-divided {
+    border-top: 1px solid #333;
+}
+
+
+/*
+        Change color of the anchor links on hover/focus.
+        */
+
+#menu .pure-menu li a:hover,
+#menu .pure-menu li a:focus {
+    background: #333;
+}
+
+#menu .pure-menu-selected,
+#menu .pure-menu-heading {
+    background: #2d3e50;
+}
+
+#menu .pure-menu-selected a {
+    color: #fff;
+}
+
+#menu .pure-menu-heading {
+    font-size: 100%;
+    color: #fff;
+    margin: 0;
+}
+
+.menu-link {
+    position: fixed;
+    display: block;
+    /* show this only on small screens */
+    top: 0;
+    left: 0;
+    /* "#menu width" */
+    background: #000;
+    background: rgba(0, 0, 0, 0.7);
+    font-size: 10px;
+    /* change this value to increase/decrease button size */
+    z-index: 10;
+    width: 2em;
+    height: auto;
+    padding: 2.1em 1.6em;
+}
+
+.menu-link:hover,
+.menu-link:focus {
+    background: #000;
+}
+
+.menu-link span {
+    position: relative;
+    display: block;
+}
+
+.menu-link span,
+.menu-link span:before,
+.menu-link span:after {
+    background-color: #fff;
+    pointer-events: none;
+    width: 100%;
+    height: 0.2em;
+}
+
+.menu-link span:before,
+.menu-link span:after {
+    position: absolute;
+    margin-top: -0.6em;
+    content: " ";
+}
+
+.menu-link span:after {
+    margin-top: 0.6em;
+}
+
+@media (min-width: 48em) {
+    .l-box {
+        padding: 1em;
+    }
+    .header,
+    .content {
+        padding-top: 2em;
+    }
+    #layout {
+        padding-left: 150px;
+        /* left col width "#menu" */
+        left: 0;
+    }
+    #menu {
+        left: 150px;
+    }
+    .menu-link {
+        position: fixed;
+        left: 150px;
+        display: none;
+    }
+    #layout.active .menu-link {
+        left: 150px;
+    }
+    .content .content-subhead {
+    color: #999;
+    padding-bottom: 0.3em;
+    text-transform: uppercase;
+    margin: 0;
+    border-bottom: 2px solid #eee;
+    display: inline-block;
+    }
+    .content .content-ribbon {
+        margin: 3em;
+        border-bottom: 1px solid #eee;
+    }
+    .ribbon {
+        background: #eee;
+        text-align: center;
+        padding: 2em;
+        color: #999;
+    }
+    .ribbon h2 {
+        display: inline;
+        font-weight: normal;
+    }
+}
+
+@media (max-width: 48em) {
+    /* Only apply this when the window is small. Otherwise, the following
+    case results in extra padding on the left:
+        * Make the window small.
+        * Tap the menu to trigger the active state.
+        * Make the window large again.
+    */
+    #layout.active {
+        position: relative;
+        left: 150px;
+    }
 }
