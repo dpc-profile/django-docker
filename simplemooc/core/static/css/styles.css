@@ -192,7 +192,12 @@ a.pure-button-primary {
     border-radius: 5px;
     font-size: 120%;
 }
-
+.inner {
+    padding: 0em 1em;
+}
+.inner p {
+    margin-top: 0;
+}
 #layout,
 #menu,
 .menu-link {

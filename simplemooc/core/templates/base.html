@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DFN59YZEDW"></script>
+    !--<script async src="https://www.googletagmanager.com/gtag/js?id=G-DFN59YZEDW"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -39,6 +39,7 @@
                     <li class="pure-menu-item"><a href="{% url 'courses:index' %}" class="pure-menu-link">Cursos</a></li>
                     <li class="pure-menu-item"><a href="{% url 'core:contact' %}" class="pure-menu-link">Contato</a></li>
                     {% if user.is_authenticated %}
+                    <li class="pure-menu-item"><a href="{% url 'accounts:dashboard' %}" class="pure-menu-link">Painel</a></li>
                     <li class="pure-menu-item"><a href="{% url 'accounts:logout' %}" class="pure-menu-link">Sair</a></li>
                     {% else %}
                     <li class="pure-menu-item"><a href="{% url 'accounts:login' %}" class="pure-menu-link">Entrar</a></li>
