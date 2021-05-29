@@ -1,9 +1,46 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="pure-g-r content-ribbon">
+<div class="pure-g-r content-ribbon" style="display: flex">
 
-    <div class="pure-u-2-3">
+    <div>
+        <div class="pure-u-1 pure-menu-heading">
+            <ul class="breadcrumb">
+                {% block breadcrumb %}
+                <li><a href="{% url 'accounts:dashboard' %}">Meu Painel</a></li>
+                {% endblock %}
+            </ul>
+        </div>
+
+        <div class="pure-u-1-3">
+            <table class="pure-table pure-table-bordered">
+                <tbody>
+                    <tr><th class="pure-menu-heading">Bem vindo, {{ user }}</a></td></tr>
+                        
+                    <div>
+                        <th><a href="#" class="pure-menu-heading">Meus Cursos</a></td>
+                            <tr>
+                                <td><a href="#" class="pure-menu-link"><i class="fas fa-book"></i>Curso 1</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" class="pure-menu-link"><i class="fas fa-book"></i>Curso 2</a></td>
+                            </tr>
+                    </div>
+                    <div>
+                        <th class="pure-menu-heading">Minha Conta</td>
+                            <tr>
+                                <td><a href="#" class="pure-menu-link"><i class="fas fa-cog"></i>Editar Conta</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" class="pure-menu-link"><i class="fas fa-lock"></i>Editar Senha</a></td>
+                            </tr>
+                    </div>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="pure-u-2-3" style="padding: 40px;">
         <div class="inner">
             {% block dashboard_content %}
             <p><strong>Usuário</strong>: {{ user }}</p>
@@ -11,41 +48,6 @@
             {% endblock %}
         </div>
     </div>
-
-    <div class="pure-u-1 pure-menu-heading">
-        <ul class="breadcrumb">
-            {% block breadcrumb %}
-            <li><a href="{% url 'accounts:dashboard' %}">Meu Painel</a></li>
-            {% endblock %}
-        </ul>
-    </div>
-
-    <div class="pure-u-1-3">
-        <table class="pure-table pure-table-bordered">
-            <tbody>
-                <div>
-                    <th><a href="#" class="pure-menu-heading">Meus Cursos</a></td>
-                        <tr>
-                            <td><a href="#" class="pure-menu-link">Curso 1</a></td>                            
-                        </tr>
-                        <tr>
-                            <td><a href="#" class="pure-menu-link">Curso 2</a></td>                            
-                        </tr>
-                </div>
-                <div>
-                    <th class="pure-menu-heading">Minha Conta</td>
-                        <tr>
-                            <td><a href="#" class="pure-menu-link">Editar Conta</a></td>
-                        </tr>
-                        <tr>
-                            <td><a href="#" class="pure-menu-link">Editar Senha</a></td>
-                        </tr>
-                </div>
-            </tbody>
-        </table>
-    </div>
-
-    
 
 </div>
 

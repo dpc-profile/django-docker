@@ -4,3 +4,4 @@ gunicorn==20.0.4
 Pillow==7.2.0
 pytz==2020.1
 sqlparse==0.3.1
+fontawesome-free==5.15.3
